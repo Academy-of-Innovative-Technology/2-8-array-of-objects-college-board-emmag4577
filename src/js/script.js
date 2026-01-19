@@ -1,6 +1,6 @@
 const colleges = [
     {
-        id: harvard,
+        id: "harvard",
         info: {
             location:"Cambridge, Massachusetts",
             program:"Mind, Brain, and behavior program",
@@ -10,7 +10,7 @@ const colleges = [
         }
     },
     {
-        id: princeton,
+        id: "princeton",
         info: {
             location:"Princeton, New Jersey",
             program:"Computer Science/Psychology",
@@ -50,4 +50,33 @@ const colleges = [
         }
     }
 
-]
+];
+const profiles = document.querySelectorAll(".college-card");
+
+cards.forEach((card, index) => {
+    const college = colleges[index];
+    if (!college) return;
+
+    card.querySelector("img").src = college.info.logo;
+    card.querySelector("img").alt = college.id;
+
+    card.querySelector("h5").textContent =
+        `${college.info.rank}. ${college.id}`;
+
+    const paragraphs = card.querySelectorAll("p");
+
+    paragraphs[0].innerHTML =
+        `<strong>Address:</strong> ${college.info.location}`;
+
+    paragraphs[1].innerHTML =
+        `<strong>Website:</strong> 
+         <a href="${college.info.website}" target="_blank">
+            ${college.info.website}
+         </a>`;
+
+    paragraphs[2].innerHTML =
+        `<strong>Google Maps:</strong> 
+         <a href="https://maps.google.com?q=${college.info.location}" target="_blank">
+            View on Google Maps
+         </a>`;
+});
