@@ -59,23 +59,29 @@ html {
 	background-color: #f9f9f9;
 }
 
+.college-card .row {
+	align-items: center;
+}
+
 
 .college-image {
 	width: 100%;
-	max-width: 150px;   /* was 200px */
-	height: auto;       /* responsive */
+	max-width: 120px;   /* key fix */
+	height: auto;
 	object-fit: contain;
 	border-radius: 8px;
 	display: block;
 }
 
 
+
 .college-info {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-left: 0;     /* remove forced spacing */
+	margin-left: 0;     /* remove overlap cause */
 }
+
 
 .college-info h5 {
 	font-size: 1.8rem;  /* responsive font */
