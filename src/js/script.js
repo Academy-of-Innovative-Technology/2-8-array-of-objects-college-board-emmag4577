@@ -53,7 +53,7 @@ const colleges = [
 ];
 const profiles = document.querySelectorAll(".college-card");
 
-cards.forEach((card, index) => {
+profiles.forEach((card, index) => {
     const college = colleges[index];
     if (!college) return;
 
