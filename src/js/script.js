@@ -51,32 +51,35 @@ const colleges = [
     }
 
 ];
-const profiles = document.querySelectorAll(".college-card");
+const listGroup = document.querySelector(".list-group");
 
-profiles.forEach((card, index) => {
-    const college = colleges[index];
-    if (!college) return;
+listGroup.innerHTML = " ";
 
-    card.querySelector("img").src = college.info.logo;
-    card.querySelector("img").alt = college.id;
+colleges.forEach(college => {
+    const card = document.createElement("div");
+    card.classList.add("list-group-item", "college-card");
 
-    card.querySelector("h5").textContent =
-        `${college.info.rank}. ${college.id}`;
+    card.innerHTML = `
+    <div class="row">
+        <div class="col-2">
+            <img src="${college.info.logo}" alt="${college.id}" class="collegeImage">
+        </div>
+        <div class="col-7 college-info">
+        <h5>${college.info.rank}. ${college.id}</h5>
+                <p><strong>Address:</strong> ${college.info.location}</p>
+                <p><strong>Website:</strong>
+                    <a href="${college.info.website}" target="_blank">
+                        ${college.info.website}
+                    </a>
+                </p>
+                <p><strong>Google Maps:</strong>
+                    <a href="https://maps.google.com?q=${college.info.location}" target="_blank">
+                        View on Google Maps
+                    </a>
+                </p>
+            </div>
+        </div>
+    `;
 
-    const paragraphs = card.querySelectorAll("p");
-
-    paragraphs[0].innerHTML =
-        `<strong>Address:</strong> ${college.info.location}`;
-
-    paragraphs[1].innerHTML =
-        `<strong>Website:</strong> 
-         <a href="${college.info.website}" target="_blank">
-            ${college.info.website}
-         </a>`;
-
-    paragraphs[2].innerHTML =
-        `<strong>Google Maps:</strong> 
-         <a href="https://maps.google.com?q=${college.info.location}" target="_blank">
-            View on Google Maps
-         </a>`;
+    listGroup.appendChild(card);
 });
