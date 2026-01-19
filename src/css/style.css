@@ -1,4 +1,4 @@
-html {
+/*html {
 	height: 100%;
 	width: 100%;
 }
@@ -29,6 +29,56 @@ html {
 
 .college-info h5 {
 	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+.college-info p {
+	margin: 5px 0;
+}
+
+.college-info a {
+	text-decoration: none;
+	color: #007bff;
+}
+
+.college-info a:hover {
+	text-decoration: underline;
+}*/
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+
+.college-card {
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 15px;
+	background-color: #f9f9f9;
+}
+
+
+.college-image {
+	width: 100%;
+	max-width: 150px;   /* was 200px */
+	height: auto;       /* responsive */
+	object-fit: contain;
+	border-radius: 8px;
+	display: block;
+}
+
+
+.college-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 0;     /* remove forced spacing */
+}
+
+.college-info h5 {
+	font-size: 1.8rem;  /* responsive font */
 	margin-bottom: 10px;
 }
 
