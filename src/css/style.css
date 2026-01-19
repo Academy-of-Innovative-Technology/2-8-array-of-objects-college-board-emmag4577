@@ -91,19 +91,16 @@ html {
 
 
 .college-card .row {
-	display: flex;
-	flex-wrap: nowrap;  
+	display: grid;
+	grid-template-columns: 60px 1fr; /* image | text */
+	column-gap: 20px;
 	align-items: center;
 }
 
-.college-card .col-2 {
-	flex: 0 0 auto;       
-	max-width: 70px;
-}
-
+.college-card .col-2,
 .college-card .col-7 {
-	flex: 1 1 auto;
-	min-width: 0; 
+	max-width: 100%;
+	flex: unset;
 }
 
 .college-info {
