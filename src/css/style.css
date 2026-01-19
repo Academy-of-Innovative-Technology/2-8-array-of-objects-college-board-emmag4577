@@ -59,10 +59,6 @@ html {
 	background-color: #f9f9f9;
 }
 
-.college-card .row {
-	align-items: center;
-}
-
 
 .college-image {
 	width: 50px;
@@ -74,17 +70,8 @@ html {
 }
 
 
-
-.college-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-left: 0;     /* remove overlap cause */
-}
-
-
 .college-info h5 {
-	font-size: 1.8rem;  /* responsive font */
+	font-size: 1.8rem; 
 	margin-bottom: 10px;
 }
 
@@ -99,4 +86,28 @@ html {
 
 .college-info a:hover {
 	text-decoration: underline;
+}
+
+
+
+.college-card .row {
+	display: flex;
+	flex-wrap: nowrap;  
+	align-items: center;
+}
+
+.college-card .col-2 {
+	flex: 0 0 auto;       
+	max-width: 70px;
+}
+
+.college-card .col-7 {
+	flex: 1 1 auto;
+	min-width: 0; 
+}
+
+.college-info {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	white-space: normal;
 }
